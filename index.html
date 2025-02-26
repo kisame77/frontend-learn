@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet" />
     <script src="tailwind.js"></script>
     <title>Awesome</title>
-    <link rel="shortcut icon" type="image/png" href="https://img.icons8.com/small/64/000000/fire-heart.png">
+    <link rel="shortcut icon" type="image/png" href="https://img.icons8.com/small/64/000000/fire-heart.png" />
     <style type="text/tailwindcss">
-      :root {
+        :root {
         --primary: rgb(88, 40, 244);
         --primary-hover: rgb(69, 29, 200);
+        --font1: "Lobster", sans-serif;
       }
       h1 {
         font-size: 4rem;
         line-height: 1.2;
         font-weight: bold;
         margin-bottom: 1rem;
-        font-family: 'Lobster';
+        font-family: var(--font1);
+      }
+      .font1 {
+        font-family: var(--font1);
       }
       .button {
         display: inline-flex;
@@ -49,55 +54,147 @@
       .navitems > li > a {
         @apply h-12 p-4 hover:bg-gray-700 rounded-lg flex items-center gap-2;
       }
+      .card {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        position: relative;
+        border-radius: 1rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        background-color: white;
+        padding-bottom: 1rem;
+      }
+      .hoverlist > * {
+        @apply hover:bg-gray-100 rounded-md transition duration-150;
+      }
+      .hoverlist > * > a {
+        @apply flex items-center p-2 block;
+      }
     </style>
-  </head>
-  <body>
-    <header
-      class="flex items-center justify-between px-8 bg-gray-800 h-20 text-white sticky top-0 z-50"
-    >
-      <logo>
-        <a class="flex items-center gap-1" href="">
-          <img
-            class="h-8 -mt-1"
-            src="https://img.icons8.com/small/64/ffffff/fire-heart.png"
-            alt="fire-heart"
-          />
-          <span>Awesome</span>
-        </a>
-      </logo>
-      <nav>
-        <ul class="flex items-center navitems">
-          <li><a href="">Home</a></li>
-          <li><a href="">Create Post</a></li>
-          <li>
-            <a href="">
-              <img
-                class="h-8 rounded-full object-cover bg-teal-200"
-                src="https://img.icons8.com/doodle/96/bart-simpson.png"
-                alt="bart-simpson"
-              />Bart
-              <img
-                class="w-4"
-                src="https://img.icons8.com/small/64/777777/expand-arrow.png"
-                alt="expand-arrow"
-              />
+</head>
+
+<body class="bg-gray-100">
+    <header class="flex items-center justify-between px-8 bg-gray-800 h-20 text-white sticky top-0 z-50">
+        <logo>
+            <a class="flex items-center gap-1" href="">
+                <img class="h-8 -mt-1" src="https://img.icons8.com/small/64/ffffff/fire-heart.png" alt="fire-heart" />
+                <span>Awesome</span>
             </a>
-          </li>
-        </ul>
-      </nav>
+        </logo>
+        <nav>
+            <ul class="flex items-center navitems">
+                <li><a href="">Home</a></li>
+                <li><a href="">Create Post</a></li>
+                <li>
+                    <a href="">
+                        <img class="h-8 rounded-full object-cover bg-teal-200"
+                            src="https://img.icons8.com/doodle/96/bart-simpson.png" alt="bart-simpson" />Bart
+                        <img class="w-4" src="https://img.icons8.com/small/64/777777/expand-arrow.png"
+                            alt="expand-arrow" />
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
-    <hero
-      class="grid bg-gray-700 text-white text-center  bg-cover bg-[url('download.jpeg')]"
-    >
-      <div class="col-start-1 row-start-1 bg-gray-800 bg-opacity-40 w-full h-full"></div>
-      <div class="col-start-1 row-start-1 py-24 px-10">
-        <h1>Awesome Photos & Captions</h1>
-        <p class="text-lg font-bold mb-5">
-          Share your favorite Photos from Flickr and add a great caption
-        </p>
-        <a class="button" href="">Get Started</a>
-      </div>
+    <hero class="grid bg-gray-700 text-white text-center bg-cover bg-[url('download.jpeg')]">
+        <div class="col-start-1 row-start-1 bg-gray-800 bg-opacity-40 w-full h-full"></div>
+        <div class="col-start-1 row-start-1 py-24 px-10">
+            <h1>Awesome Photos & Captions</h1>
+            <p class="text-lg font-bold mb-5">
+                Share your favorite Photos from Flickr and add a great caption
+            </p>
+            <a class="button" href="">Get Started</a>
+        </div>
     </hero>
-  </body>
+
+    <content class="grid grid-cols-3 max-w-7xl mx-auto mt-6">
+        <main class="col-span-2 mx-[10%]">
+            <article class="card">
+                <div class="flex items-center justify-between px-4 h-14">
+                    <h3 class="text-lg font-bold w-[50%] truncate">
+                        Little Jedi This only goes to the middle
+                    </h3>
+                    <div class="text-sm text-gray-500">
+                        flickr @
+                        <a class="hover:underline" href="" target="blank">John Doe</a>
+                    </div>
+                </div>
+                <figure>
+                    <a href=""><img class="w-full"
+                            src="https://live.staticflickr.com/65535/50618365686_36f887ab88_c.jpg" alt=""
+                            srcset="" /></a>
+                </figure>
+                <div class="p-4 pb-2">
+                    <a class="flex items-center gap-1 mb-4" href="">
+                        <img class="w-8 h-8 rounded-full" src="https://img.icons8.com/small/96/A9A9A9/happy.png"
+                            alt="" />
+                        <span class="font-bold hover:underline">Lisa</span>
+                    </a>
+                    <p class="text-5xl mb-10 px-4 font1">
+                        Jedi Kitty protects the street
+                    </p>
+                    <div class="flex items-center gap-2 text-sm mb-5">
+                        <a class="bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-500 hover:text-white"
+                            href="">Animal</a>
+                        <a class="bg-gray-200 rounded-full px-3 py-1 hover:bg-gray-500 hover:text-white"
+                            href="">Cute</a>
+                    </div>
+                    <div class="flex items-center justify-between text-sm px-2">
+                        <a class="font-bold hover:underline" href="">Comments<span
+                                class="font-light text-gray-500 ml-2">3</span></a>
+                        <div class="flex items-center gap-4 [&>a:hover]:underline">
+                            <div class="flex items-center gap-1">
+                                <img src="https://img.icons8.com/small/24/000000/fire-heart.png" alt="" />
+                            </div>
+                            <a href="">Like</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <aside class="col-span-1 mr-[20%] bg-red-200">
+            <section class="card p-4">
+                <h2>Categories</h2>
+                <ul class="hoverlist">
+                    <li>
+                        <a href="">
+                            <img class="w-8 h-8 object-cover mr-2"
+                                src="https://img.icons8.com/small/96/null/landscape.png" alt="" />
+                            Landscape</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img class="w-8 h-8 object-cover mr-2"
+                                src="https://img.icons8.com/small/96/null/portrait.png" alt="" />
+                            People</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img class="w-8 h-8 object-cover mr-2"
+                                src="https://img.icons8.com/small/96/null/dog.png" alt="" />
+                            Animals</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img class="w-8 h-8 object-cover mr-2"
+                                src="https://img.icons8.com/small/96/null/collage.png" alt="" />
+                            <span class="font-bold text-sm">Abstract</span></a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img class="w-8 h-8 object-cover mr-2"
+                                src="https://img.icons8.com/small/96/null/180-degrees.png" alt="" />
+                                <span class="font-bold text-sm">Black & White</span>
+                            </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+    </content>
+</body>
+
 </html>
