@@ -18,10 +18,16 @@
       }
       h1 {
         font-size: 4rem;
-        line-height: 1.2;
         font-weight: bold;
+        line-height: 1.2;
         margin-bottom: 1rem;
         font-family: var(--font1);
+      }
+      h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 2rem;
+        margin-bottom: 0.75rem;
       }
       .font1 {
         font-family: var(--font1);
@@ -70,6 +76,9 @@
       }
       .hoverlist > * > a {
         @apply flex items-center p-2 block;
+      }
+      .highlight {
+        @apply !bg-indigo-100;
       }
     </style>
 </head>
@@ -156,27 +165,28 @@
                 </div>
             </article>
         </main>
-        <aside class="col-span-1 mr-[20%] bg-red-200">
+        <aside class="col-span-1 mr-[20%]">
             <section class="card p-4">
                 <h2>Categories</h2>
                 <ul class="hoverlist">
-                    <li>
+                    <li class="highlight">
                         <a href="">
                             <img class="w-8 h-8 object-cover mr-2"
                                 src="https://img.icons8.com/small/96/null/landscape.png" alt="" />
-                            Landscape</a>
+                            <span class="font-bold text-sm">Landscape</span>
+                        </a>
                     </li>
                     <li>
                         <a href="">
                             <img class="w-8 h-8 object-cover mr-2"
                                 src="https://img.icons8.com/small/96/null/portrait.png" alt="" />
-                            People</a>
+                            <span class="font-bold text-sm">People</span></a>
                     </li>
                     <li>
                         <a href="">
-                            <img class="w-8 h-8 object-cover mr-2"
-                                src="https://img.icons8.com/small/96/null/dog.png" alt="" />
-                            Animals</a>
+                            <img class="w-8 h-8 object-cover mr-2" src="https://img.icons8.com/small/96/null/dog.png"
+                                alt="" />
+                            <span class="font-bold text-sm">Animals</span></a>
                     </li>
                     <li>
                         <a href="">
@@ -188,9 +198,56 @@
                         <a href="">
                             <img class="w-8 h-8 object-cover mr-2"
                                 src="https://img.icons8.com/small/96/null/180-degrees.png" alt="" />
-                                <span class="font-bold text-sm">Black & White</span>
-                            </a>
+                            <span class="font-bold text-sm">Black & White</span>
+                        </a>
                     </li>
+                </ul>
+            </section>
+            <section class="card p-4">
+                <h2 class="">Top Photos</h2>
+                <ul class="hoverlist">
+                    <li>
+                        <a href="">
+                            <img class="w-10 h-10 rounded-lg object-cover mr-3"
+                                src="https://live.staticflickr.com/65535/50618365686_36f887ab88_c.jpg" alt="" />
+                            <img class="w-6 h-6 rounded-full object-cover mr-0.5"
+                                src="https://img.icons8.com/small/96/A9A9A9/happy.png" alt="" />
+                            <span class="font-bold text-sm mr-1">Homer</span>
+                            <span class="text-sm font-light text-grey-500">(5 Likes)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img class="w-10 h-10 rounded-lg object-cover mr-3"
+                                src="https://live.staticflickr.com/65535/50618365686_36f887ab88_c.jpg" alt="" />
+                            <img class="w-6 h-6 rounded-full object-cover mr-0.5"
+                                src="https://img.icons8.com/small/96/A9A9A9/happy.png" alt="" />
+                            <span class="font-bold text-sm mr-1">Homer</span>
+                            <span class="text-sm font-light text-grey-500">(5 Likes)</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="card p-4">
+                <h2 class="">Top Captions</h2>
+                <ul class="hoverlist">
+                    <li>
+                        <a href="">
+                            <img class="w-8 h-8 rounded-full object-cover mr-1"
+                                src="https://img.icons8.com/small/96/A9A9A9/happy.png" alt="" />
+                            <span class="font-bold text-sm mr-1">Homer</span>
+                            <span class="text-sm font-light text-grey-500">(5 Likes)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img class="w-8 h-8 rounded-full object-cover mr-1"
+                                src="https://img.icons8.com/small/96/A9A9A9/happy.png" alt="" />
+                            <span class="font-bold text-sm mr-1">Homer</span>
+                            <span class="text-sm font-light text-grey-500">(5 Likes)</span>
+                        </a>
+                    </li>         
                 </ul>
             </section>
         </aside>
